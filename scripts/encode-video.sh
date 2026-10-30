@@ -19,6 +19,7 @@ CHANNEL_ID=""
 CHANNEL_NAME=""
 CHANNEL_HANDLE=""
 PLACEHOLDER="0"
+AI_GENERATED="0"
 SPAN_CUE="0"
 STANZA=""
 CITATION=""
@@ -33,6 +34,7 @@ Usage: scripts/encode-video.sh --source FILE --subtitles FILE.vtt --id SLUG \
 
 Options:
   --placeholder     Mark the catalog entry as a pipeline placeholder
+  --ai-generated    Mark the picture and sound as generated for ODIN
   --span-cue        Stretch the single WebVTT cue so it covers the whole video
   --stanza N        Hávamál stanza number
   --citation TEXT   Source line stored on the catalog entry
@@ -54,6 +56,7 @@ while [[ $# -gt 0 ]]; do
     --citation) CITATION="${2:-}"; shift 2 ;;
     --published-at) PUBLISHED_AT="${2:-}"; shift 2 ;;
     --placeholder) PLACEHOLDER="1"; shift ;;
+    --ai-generated) AI_GENERATED="1"; shift ;;
     --span-cue) SPAN_CUE="1"; shift ;;
     --help|-h) usage; exit 0 ;;
     *)
@@ -127,11 +130,11 @@ encode_variant() {
   echo "  ${name}"
   ffmpeg -y -nostdin -hide_banner -loglevel error \
     -i "$SOURCE" \
-    -vf "scale=${width}:${height}:force_original_aspect_ratio=decrease:flags=lanczos,setsar=1,pad=${width}:${height}:(ow-iw)/2:(oh-ih)/2:color=black,fps=30,format=yuv420p" \
+    -vf "scale=${width}:${height}:force_original_aspect_ratio=decrease:flags=lanczos,setsar=1,pad=${width}:${height}:(ow-iw)/2:(oh-ih)/2:color=black,format=yuv420p" \
     -c:v libx264 -profile:v main -level:v 4.0 -pix_fmt yuv420p \
     -preset veryfast \
     -b:v "$bitrate" -maxrate "$maxrate" -bufsize "$bufsize" \
-    -sc_threshold 0 -g 120 -keyint_min 120 \
+    -sc_threshold 0 -g 48 -keyint_min 48 \
     -c:a aac -b:a 64k -ac 2 -ar 48000 \
     -t 180 \
     -hls_time 4 \
@@ -173,6 +176,7 @@ export ODIN_CHANNEL_HANDLE="$CHANNEL_HANDLE"
 export ODIN_DURATION="$DURATION"
 export ODIN_PUBLISHED_AT="$PUBLISHED_AT"
 export ODIN_PLACEHOLDER="$PLACEHOLDER"
+export ODIN_AI_GENERATED="$AI_GENERATED"
 export ODIN_STANZA="$STANZA"
 export ODIN_CITATION="$CITATION"
 export ODIN_VTT_PATH="${OUT}/subtitles.vtt"

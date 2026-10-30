@@ -47,6 +47,7 @@ describe('pipeline helpers', () => {
       durationSec: 15,
       publishedAt: '2026-10-28T18:00:00.000Z',
       placeholder: true,
+      aiGenerated: false,
       stanza: 1,
       subtitleCitation: 'Bellows 1923',
       subtitleText: 'Within the gates',

@@ -14,6 +14,7 @@ export interface VideoInput {
   durationSec: number
   publishedAt: string
   placeholder: boolean
+  aiGenerated: boolean
   stanza: number | null
   subtitleCitation: string
   subtitleText: string

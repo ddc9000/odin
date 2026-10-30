@@ -39,6 +39,7 @@ const video: VideoInput = {
   durationSec: Number(required('ODIN_DURATION')),
   publishedAt: required('ODIN_PUBLISHED_AT'),
   placeholder: process.env.ODIN_PLACEHOLDER === '1',
+  aiGenerated: process.env.ODIN_AI_GENERATED === '1',
   stanza: stanzaRaw === '' ? null : Number(stanzaRaw),
   subtitleCitation: process.env.ODIN_CITATION?.trim() ?? '',
   subtitleText: subtitleTextFromVtt(vtt),

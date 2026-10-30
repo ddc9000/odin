@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { formatDate, formatDuration, initials } from '../src/format'
+import { videoIdFromTitle } from '../src/pipeline/ids'
 
 describe('format', () => {
   it('renders clock times the way a video card expects', () => {
@@ -14,5 +15,8 @@ describe('format', () => {
 
   it('builds a short channel mark and skips small words', () => {
     expect(initials('Skáld of the Pines')).toBe('SP')
+    expect(initials('ODIN · Forest')).toBe('OF')
+    expect(videoIdFromTitle('Dawn Mist — Hávamál 77')).toBe('dawn-mist')
+    expect(videoIdFromTitle('The Windy Tree — Hávamál 139')).toBe('the-windy-tree')
   })
 })

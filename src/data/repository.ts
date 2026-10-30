@@ -27,6 +27,7 @@ function toVideo(record: VideoRecord, channels: Map<string, Video['channel']>, m
     durationSec: record.durationSec,
     publishedAt: record.publishedAt,
     placeholder: record.placeholder,
+    aiGenerated: record.aiGenerated === true,
     stanza: record.stanza,
     subtitleCitation: record.subtitleCitation,
     subtitleText: record.subtitleText,
@@ -53,6 +54,7 @@ export function createCatalog(file: CatalogFile, mediaBase: string): Catalog {
       video.subtitleText,
       video.subtitleCitation,
       video.placeholder ? 'placeholder' : '',
+      video.aiGenerated ? 'ai-generated' : '',
       video.stanza == null ? '' : `stanza ${video.stanza} hávamál havamal`,
     ]
       .join('\n')

@@ -20,28 +20,49 @@ function walk(dir: string): string[] {
 }
 
 describe('seed videos', () => {
-  it('publishes three placeholder tapes of at most 15 seconds', () => {
+  it('publishes the nine generated films, each at most 15 seconds', () => {
     expect(catalog.version).toBe(1)
-    expect(catalog.videos).toHaveLength(3)
+    expect(catalog.channels).toEqual([
+      { id: 'odin-forest', name: 'ODIN · Forest', handle: '@odin' },
+    ])
     expect(catalog.videos.map((video) => video.id)).toEqual([
-      'at-the-gate',
-      'the-road-alone',
-      'a-name-that-stays',
+      'dawn-mist',
+      'forest-rain',
+      'moonlit-runestone',
+      'autumn-birches',
+      'winter-twilight',
+      'moss-falls',
+      'the-windy-tree',
+      'lake-at-dawn',
+      'brand-from-a-brand',
     ])
     for (const video of catalog.videos) {
-      expect(video.placeholder).toBe(true)
+      expect(video.placeholder).toBe(false)
+      expect(video.aiGenerated).toBe(true)
+      expect(video.channelId).toBe('odin-forest')
       expect(video.durationSec).toBeGreaterThan(10)
       expect(video.durationSec).toBeLessThanOrEqual(15.05)
       expect(Math.round(video.durationSec)).toBeLessThanOrEqual(15)
       expect(video.subtitleCitation).toMatch(/Bellows/)
       expect(video.subtitleCitation).toMatch(/1923/)
+      expect(video.description.length).toBeGreaterThan(0)
       expect(video.media.hls.startsWith('videos/')).toBe(true)
       expect(video.media.hls.includes('://')).toBe(false)
     }
   })
 
-  it('keeps one Hávamál cue on screen for the whole video', () => {
-    const expected = ['Within the gates', 'wandered alone', 'Cattle die']
+  it('keeps one Hávamál cue for the whole video, for the subtitle track', () => {
+    const expected = [
+      'Cattle die',
+      'A better burden',
+      'None made me happy',
+      'On the hillside drear',
+      'Young was I once',
+      'A measure of wisdom',
+      'I ween that I hung',
+      'the fame of a dead man',
+      'A brand from a brand',
+    ]
     catalog.videos.forEach((video, index) => {
       const vttPath = path.join(root, 'public/media', video.media.subtitles)
       const cues = parseVtt(readFileSync(vttPath, 'utf8'))
@@ -73,6 +94,6 @@ describe('seed videos', () => {
       total += bytes
       expect(bytes).toBeLessThan(MAX_FILE_BYTES)
     }
-    expect(total).toBeLessThan(80 * 1024 * 1024)
+    expect(total).toBeLessThan(512 * 1024 * 1024)
   })
 })

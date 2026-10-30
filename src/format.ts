@@ -25,7 +25,7 @@ export function initials(name: string): string {
   const parts = name
     .split(/\s+/)
     .map((part) => part.trim())
-    .filter((part) => part.length > 0 && !SKIPPED.has(part.toLowerCase()))
+    .filter((part) => part.length > 0 && !SKIPPED.has(part.toLowerCase()) && /\p{L}/u.test(part))
   const letters = parts.slice(0, 2).map((part) => Array.from(part)[0] ?? '')
   const value = letters.join('').toLocaleUpperCase('en')
   return value || '•'

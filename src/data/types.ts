@@ -12,6 +12,8 @@ export interface VideoRecord {
   durationSec: number
   publishedAt: string
   placeholder: boolean
+  /** Picture and sound were generated for ODIN, not filmed. */
+  aiGenerated: boolean
   /** Hávamál stanza number in the Bellows edition, when this video carries one. */
   stanza: number | null
   subtitleCitation: string
@@ -37,6 +39,7 @@ export interface Video {
   durationSec: number
   publishedAt: string
   placeholder: boolean
+  aiGenerated: boolean
   stanza: number | null
   subtitleCitation: string
   subtitleText: string

@@ -4,7 +4,7 @@ ODIN is een alleen-lezen videosite. Bezoekers kunnen bladeren, zoeken en afspele
 
 De indeling is die van een bekende videosite: een balk met zoeken, een inklapbaar zijmenu, een raster van kaarten (miniatuur, titel, kanaal, duur), een kijkpagina met speler, titel, beschrijving en een kolom suggesties, en een zoekpagina. Naam, merk en kleuren zijn van ODIN. De beeldtaal staat in CSS-variabelen in `src/styles/tokens.css`, zodat een eigen stijl later één themablok is en niet een herschrijving van de pagina's.
 
-Het onderwerp van de beelden is ambient en bosachtig, met een elektronische ondertoon uit de jaren negentig en tweeduizend. Op elke video staat een strofe uit de Hávamál. De drie video's in deze versie zijn placeholders en zijn zo gemarkeerd.
+Het onderwerp is ambient en bosachtig. Op elke video staat een strofe uit de Hávamál, al in het beeld gebrand. De negen films in deze versie zijn door ons gegenereerd (beeld en geluid); dat staat in de catalogus als `aiGenerated` en op de kijkpagina. Het WebVTT-spoor bestaat voor toegankelijkheid en staat standaard uit, zodat de strofe niet dubbel op het beeld komt.
 
 De site hoort op [https://ddc9000.github.io/odin/](https://ddc9000.github.io/odin/).
 
@@ -29,7 +29,7 @@ browser
 - **Eén media-instelling.** `MEDIA_BASE_URL` in `src/config.ts`. Leeg betekent: de map `public/media` die met de site mee wordt gepubliceerd. Een ingevulde URL is de nieuwe origin. Verder verandert er niets.
 - **Beeld.** Adaptive HLS in drie rendities, 360p, 720p en 1080p, als MPEG-TS. Daarnaast een JPEG-miniatuur en een WebVTT-spoor.
 - **Speler.** Kan de browser `application/vnd.apple.mpegurl` afspelen, dan gaat de URL rechtstreeks op het `<video>`-element. Dat is het pad op iPhone- en iPad-Safari, waar Media Source Extensions niet beschikbaar zijn en hls.js dus niet kan werken. Elders laadt de site hls.js. Het element heeft `playsinline` en `controls`, zodat iOS inline afspeelt en de systeembediening gebruikt.
-- **Ondertitel.** De speler leest het WebVTT-bestand en tekent de actieve cue zelf, standaard aan. Zo blijft een strofe leesbaar, ook als de native cue-weergave per browser verschilt. Het master-playlist adverteert het spoor wel, maar niet als standaard, anders zet Safari er een tweede exemplaar overheen.
+- **Ondertitel.** De speler kan het WebVTT-bestand tekenen. Bij deze eerste reeks staat die laag uit (`localStorage`-sleutel `odin.captions` moet `on` zijn), omdat de strofe al in het beeld staat. De knop Subtitles zet hem aan. Het master-playlist adverteert het spoor, niet als standaard, anders tekent Safari het zelf nog een keer.
 - **Nog niet gebouwd.** Accounts, uploads, likes en reacties. De types en de poorten staan in `src/future/`, de vlaggen in `src/features.ts` (allemaal `false`). De site roept ze niet aan. Zie `docs/uitbreidingen.md`.
 
 ## Lokaal draaien
@@ -97,19 +97,33 @@ npm run generate:placeholders
 
 De bron-mp4's landen in `sources/` en staan in `.gitignore`. De HLS-uitvoer in `public/media/` gaat wel mee in git, omdat GitHub Pages die bytes serveert.
 
-## Placeholders en de tekst
+## De eerste negen films
 
-De drie testvideo's duren 15 seconden. Het beeld is een langzaam bewegend verloop met een beetje ruis. Het geluid is een zacht akkoord met een beetje ruis eronder, gegenereerd met ffmpeg, niet opgenomen. In de catalogus staat `placeholder: true`.
+Beeld en geluid zijn door ons gegenereerd, niet gefilmd. Elke film duurt 15 seconden en is 1080p. Het kanaal is ODIN · Forest (`@odin`). De beschrijving in de catalogus is Nederlands. De strofe staat in het beeld; het WebVTT-bestand heeft één cue van 0 tot het einde en is niet de zichtbare laag.
 
-De verzen komen uit Henry Adams Bellows, “Hovamol”, in *The Poetic Edda* (New York: The American-Scandinavian Foundation, 1923). Die uitgave is publiek domein.
+De verzen komen uit Henry Adams Bellows, “Hovamol”, in *The Poetic Edda* (New York: The American-Scandinavian Foundation, 1923). Die uitgave is publiek domein. Tekst op [Wikisource](https://en.wikisource.org/wiki/The_Poetic_Edda_(tr._Bellows)/Hovamol).
 
-| Video | Strofe | Beginregel |
-| --- | --- | --- |
-| At the Gate | 1 | Within the gates |
-| The Road Alone | 47 | Young was I once |
-| A Name That Stays | 77 | Cattle die |
+| Film | Strofe |
+| --- | --- |
+| Dawn Mist | 77 |
+| Forest Rain | 10 |
+| Moonlit Runestone | 140 |
+| Autumn Birches | 50 |
+| Winter Twilight | 47 |
+| Moss Falls | 54 |
+| The Windy Tree | 139 |
+| Lake at Dawn | 78 |
+| Brand from a Brand | 57 |
 
-Tekst op [Wikisource](https://en.wikisource.org/wiki/The_Poetic_Edda_(tr._Bellows)/Hovamol). Elke cue loopt van `00:00:00.000` tot het einde van de video.
+Opnieuw in de catalogus zetten, vanuit de bron-mp4's en `odin-videos.json`:
+
+```bash
+node --experimental-strip-types scripts/import-real-batch.ts \
+  --json pad/odin-videos.json \
+  --dir pad/met-de-mp4s
+```
+
+Dat wist de oude mediabestanden, schrijft per film een WebVTT en draait `encode-video.sh`. `scripts/generate-placeholders.sh` blijft beschikbaar als je de pipeline wilt proberen met gegenereerde kleurvlakken; die vervangt dan wel de hele catalogus.
 
 ## Media verplaatsen naar R2
 
@@ -146,6 +160,6 @@ De Vite-`base` is `/odin/`, passend bij `https://ddc9000.github.io/odin/`.
 
 ## Grenzen van deze versie
 
-- Eerste video's, placeholders en de echte eerste batch: hooguit 15 seconden. De pipeline zelf accepteert tot 180 seconden.
-- Elk bestand onder 100 MB. De site blijft ruim onder 1 GB. De drie placeholders zitten daar ver onder.
+- Deze eerste reeks: 15 seconden per film. De pipeline zelf accepteert tot 180 seconden.
+- Elk bestand onder 100 MB. De site blijft ruim onder 1 GB.
 - Geen login, geen upload, geen likes, geen reacties. De haakjes staan klaar en zijn uit.

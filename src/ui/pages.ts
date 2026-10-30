@@ -20,7 +20,7 @@ export function renderHome(main: HTMLElement, catalog: Catalog): void {
   const page = el('section', { class: 'page' }, [
     el('h1', { class: 'lede' }, ['Forest videos, with a stanza from the Hávamál.']),
     el('p', { class: 'deck' }, [
-      'Read-only for now. A placeholder is a generated picture and tone, run through the real pipeline, with a public-domain verse held on screen for the whole clip.',
+      'Read-only for now. The pictures and sound were generated for ODIN. Each film carries a public-domain stanza from the Hávamál, already in the picture. Subtitles are there for access, and start off.',
     ]),
   ])
   if (videos.length === 0) {
@@ -71,7 +71,7 @@ export function renderWatch(main: HTMLElement, catalog: Catalog, id: string): Pl
   }
 
   const stage = el('div', { class: 'stage' })
-  const captionsOn = readStorage(CAPTIONS_KEY) !== 'off'
+  const captionsOn = readStorage(CAPTIONS_KEY) === 'on'
   const player = mountPlayer(stage, video, captionsOn)
 
   const cc = el('button', {
@@ -96,6 +96,7 @@ export function renderWatch(main: HTMLElement, catalog: Catalog, id: string): Pl
 
   const primary = el('div', { class: 'watch-primary' }, [stage])
   if (video.placeholder) primary.append(el('p', { class: 'placeholder-note' }, ['Placeholder']))
+  if (video.aiGenerated) primary.append(el('p', { class: 'placeholder-note' }, ['AI-generated']))
   primary.append(
     el('h1', { class: 'watch-title' }, [video.title]),
     el('div', { class: 'watch-row' }, [el('div', { class: 'channel-row' }, [avatar, channel]), cc]),
