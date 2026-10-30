@@ -255,7 +255,6 @@ body.sidebar-collapsed .nav-link {
   max-width: 1600px;
 }
 
-.lede,
 .page-title,
 .watch-title {
   font-family: var(--font-display);
@@ -263,15 +262,6 @@ body.sidebar-collapsed .nav-link {
   letter-spacing: -0.01em;
   line-height: 1.2;
   margin: 0;
-}
-
-.lede {
-  font-size: clamp(1.6rem, 2.4vw, 2.15rem);
-  max-width: 22ch;
-}
-
-.page-title,
-.watch-title {
   font-size: clamp(1.35rem, 2vw, 1.8rem);
 }
 
