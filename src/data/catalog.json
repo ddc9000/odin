@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "channels": [
+    {
+      "id": "skald-of-the-pines",
+      "name": "Skáld of the Pines",
+      "handle": "@skald"
+    }
+  ],
+  "videos": [
+    {
+      "id": "at-the-gate",
+      "title": "At the Gate",
+      "description": "Placeholder for the ODIN pipeline, not a finished recording. A slow moss gradient, a little noise, and a low drone. Hávamál stanza 1, in the 1923 translation by Henry Adams Bellows, stays on screen the whole time.",
+      "channelId": "skald-of-the-pines",
+      "durationSec": 15,
+      "publishedAt": "2026-10-28T18:00:00.000Z",
+      "placeholder": true,
+      "stanza": 1,
+      "subtitleCitation": "Henry Adams Bellows, translator. Hovamol. The Poetic Edda. New York: The American-Scandinavian Foundation, 1923. Public domain.",
+      "subtitleText": "Within the gates | ere a man shall go,\n(Full warily let him watch,)\nFull long let him look about him;\nFor little he knows | where a foe may lurk,\nAnd sit in the seats within.",
+      "media": {
+        "hls": "videos/at-the-gate/master.m3u8",
+        "thumbnail": "videos/at-the-gate/thumb.jpg",
+        "subtitles": "videos/at-the-gate/subtitles.vtt"
+      }
+    },
+    {
+      "id": "the-road-alone",
+      "title": "The Road Alone",
+      "description": "Placeholder. Dusk colours drift across the frame under a soft chord. Hávamál 47, Bellows 1923, held for the full length of the clip.",
+      "channelId": "skald-of-the-pines",
+      "durationSec": 15,
+      "publishedAt": "2026-10-29T18:00:00.000Z",
+      "placeholder": true,
+      "stanza": 47,
+      "subtitleCitation": "Henry Adams Bellows, translator. Hovamol. The Poetic Edda. New York: The American-Scandinavian Foundation, 1923. Public domain.",
+      "subtitleText": "Young was I once, | and wandered alone,\nAnd nought of the road I knew;\nRich did I feel | when a comrade I found,\nFor man is man's delight.",
+      "media": {
+        "hls": "videos/the-road-alone/master.m3u8",
+        "thumbnail": "videos/the-road-alone/thumb.jpg",
+        "subtitles": "videos/the-road-alone/subtitles.vtt"
+      }
+    },
+    {
+      "id": "a-name-that-stays",
+      "title": "A Name That Stays",
+      "description": "Placeholder. Night colours and a quiet low chord. Hávamál 77, Bellows 1923: the stanza about a name that outlasts cattle and kin.",
+      "channelId": "skald-of-the-pines",
+      "durationSec": 15,
+      "publishedAt": "2026-10-30T18:00:00.000Z",
+      "placeholder": true,
+      "stanza": 77,
+      "subtitleCitation": "Henry Adams Bellows, translator. Hovamol. The Poetic Edda. New York: The American-Scandinavian Foundation, 1923. Public domain.",
+      "subtitleText": "Cattle die, | and kinsmen die,\nAnd so one dies one's self;\nBut a noble name | will never die,\nIf good renown one gets.",
+      "media": {
+        "hls": "videos/a-name-that-stays/master.m3u8",
+        "thumbnail": "videos/a-name-that-stays/thumb.jpg",
+        "subtitles": "videos/a-name-that-stays/subtitles.vtt"
+      }
+    }
+  ]
+}
