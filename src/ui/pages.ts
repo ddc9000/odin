@@ -17,12 +17,7 @@ export function renderHome(main: HTMLElement, catalog: Catalog): void {
   const videos = catalog.list()
   const grid = el('div', { class: 'grid' })
   for (const video of videos) grid.append(videoCard(video))
-  const page = el('section', { class: 'page' }, [
-    el('h1', { class: 'lede' }, ['Forest videos, with a stanza from the Hávamál.']),
-    el('p', { class: 'deck' }, [
-      'Read-only for now. The pictures and sound were generated for ODIN. Each film carries a public-domain stanza from the Hávamál, already in the picture. Subtitles are there for access, and start off.',
-    ]),
-  ])
+  const page = el('section', { class: 'page' })
   if (videos.length === 0) {
     page.append(el('p', { class: 'empty' }, ['The catalog is empty.']))
   } else {
