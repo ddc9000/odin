@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "channels": [
+    {
+      "id": "odin-forest",
+      "name": "ODIN · Forest",
+      "handle": "@odin"
+    }
+  ],
+  "videos": [
+    {
+      "id": "dawn-mist",
+      "title": "Dawn Mist — Hávamál 77",
+      "description": "Mistig dennenbos bij zonsopgang",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-22T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 77,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "Cattle die, and kinsmen die,\nand so one dies one's self;\nbut a noble name will never die,\nif good renown one gets.",
+      "media": {
+        "hls": "videos/dawn-mist/master.m3u8",
+        "thumbnail": "videos/dawn-mist/thumb.jpg",
+        "subtitles": "videos/dawn-mist/subtitles.vtt"
+      }
+    },
+    {
+      "id": "forest-rain",
+      "title": "Forest Rain — Hávamál 10",
+      "description": "Zachte regen in een oud sparrenbos",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-23T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 10,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "A better burden may no man bear\nfor wanderings wide than wisdom;\nit is better than wealth on unknown ways,\nand in grief a refuge it gives.",
+      "media": {
+        "hls": "videos/forest-rain/master.m3u8",
+        "thumbnail": "videos/forest-rain/thumb.jpg",
+        "subtitles": "videos/forest-rain/subtitles.vtt"
+      }
+    },
+    {
+      "id": "moonlit-runestone",
+      "title": "Moonlit Runestone — Hávamál 140",
+      "description": "Runensteen in een maanverlichte open plek",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-24T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 140,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "None made me happy with loaf or horn,\nand there below I looked;\nI took up the runes, shrieking I took them,\nand forthwith back I fell.",
+      "media": {
+        "hls": "videos/moonlit-runestone/master.m3u8",
+        "thumbnail": "videos/moonlit-runestone/thumb.jpg",
+        "subtitles": "videos/moonlit-runestone/subtitles.vtt"
+      }
+    },
+    {
+      "id": "autumn-birches",
+      "title": "Autumn Birches — Hávamál 50",
+      "description": "Vallende herfstbladeren in een berkenbos",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-25T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 50,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "On the hillside drear the fir-tree dies,\nall bootless its needles and bark;\nit is like a man whom no one loves,\nwhy should his life be long?",
+      "media": {
+        "hls": "videos/autumn-birches/master.m3u8",
+        "thumbnail": "videos/autumn-birches/thumb.jpg",
+        "subtitles": "videos/autumn-birches/subtitles.vtt"
+      }
+    },
+    {
+      "id": "winter-twilight",
+      "title": "Winter Twilight — Hávamál 47",
+      "description": "Sneeuwval in een dennenbos bij schemering",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-26T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 47,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "Young was I once, and wandered alone,\nand nought of the road I knew;\nrich did I feel when a comrade I found,\nfor man is man's delight.",
+      "media": {
+        "hls": "videos/winter-twilight/master.m3u8",
+        "thumbnail": "videos/winter-twilight/thumb.jpg",
+        "subtitles": "videos/winter-twilight/subtitles.vtt"
+      }
+    },
+    {
+      "id": "moss-falls",
+      "title": "Moss Falls — Hávamál 54",
+      "description": "Mossige waterval in een oud bos",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-27T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 54,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "A measure of wisdom each man shall have,\nbut never too much let him know;\nthe fairest lives do those men live\nwhose wisdom wide has grown.",
+      "media": {
+        "hls": "videos/moss-falls/master.m3u8",
+        "thumbnail": "videos/moss-falls/thumb.jpg",
+        "subtitles": "videos/moss-falls/subtitles.vtt"
+      }
+    },
+    {
+      "id": "the-windy-tree",
+      "title": "The Windy Tree — Hávamál 139",
+      "description": "Oude es met twee raven",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-28T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 139,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "I ween that I hung on the windy tree,\nhung there for nights full nine;\nwith the spear I was wounded, and offered I was\nto Othin, myself to myself.",
+      "media": {
+        "hls": "videos/the-windy-tree/master.m3u8",
+        "thumbnail": "videos/the-windy-tree/thumb.jpg",
+        "subtitles": "videos/the-windy-tree/subtitles.vtt"
+      }
+    },
+    {
+      "id": "lake-at-dawn",
+      "title": "Lake at Dawn — Hávamál 78",
+      "description": "Bosmeer met mist bij dageraad",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-29T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 78,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "Cattle die, and kinsmen die,\nand so one dies one's self;\none thing I know that never dies,\nthe fame of a dead man's deeds.",
+      "media": {
+        "hls": "videos/lake-at-dawn/master.m3u8",
+        "thumbnail": "videos/lake-at-dawn/thumb.jpg",
+        "subtitles": "videos/lake-at-dawn/subtitles.vtt"
+      }
+    },
+    {
+      "id": "brand-from-a-brand",
+      "title": "Brand from a Brand — Hávamál 57",
+      "description": "Kampvuur in het nachtelijke bos",
+      "channelId": "odin-forest",
+      "durationSec": 15.018,
+      "publishedAt": "2026-10-30T18:00:00.000Z",
+      "placeholder": false,
+      "aiGenerated": true,
+      "stanza": 57,
+      "subtitleCitation": "Henry Adams Bellows, The Poetic Edda (1923), public domain",
+      "subtitleText": "A brand from a brand is kindled and burned,\nand fire from fire begotten;\nand man by his speech is known to men,\nand the stupid by their stillness.",
+      "media": {
+        "hls": "videos/brand-from-a-brand/master.m3u8",
+        "thumbnail": "videos/brand-from-a-brand/thumb.jpg",
+        "subtitles": "videos/brand-from-a-brand/subtitles.vtt"
+      }
+    }
+  ]
+}

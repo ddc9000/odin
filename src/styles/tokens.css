@@ -1,0 +1,77 @@
+/*
+ * Visual design lives here. Components only use these variables.
+ * forest-night is the default. Set data-theme="forest-dawn" on <html>
+ * for the lighter token set. A later identity can replace either block
+ * without touching the layout.
+ */
+
+:root,
+[data-theme='forest-night'] {
+  color-scheme: dark;
+  --bg: #101411;
+  --bg-elevated: #1b231d;
+  --bg-input: #0c0f0d;
+  --bg-header: rgba(16, 20, 17, 0.92);
+  --text: #f4f0e6;
+  --text-muted: #c9c1b3;
+  --text-faint: #8f897c;
+  --line: rgba(244, 240, 230, 0.14);
+  --accent: #e0a85c;
+  --accent-contrast: #1c140c;
+  --moss: #8eae86;
+  --moss-deep: #24362b;
+  --caption-bg: rgba(8, 10, 8, 0.78);
+  --caption-text: #f7f3ea;
+  --badge-bg: rgba(0, 0, 0, 0.78);
+  --badge-text: #f4f0e6;
+  --scrim: rgba(0, 0, 0, 0.55);
+  --glow: rgba(142, 174, 134, 0.18);
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --danger: #e0a090;
+  --focus: #e0a85c;
+  --thumb-shade: #0b0e0c;
+  --font-body: 'Segoe UI', 'Helvetica Neue', 'Liberation Sans', 'Nimbus Sans', sans-serif;
+  --font-display: 'Iowan Old Style', Palatino, 'Palatino Linotype', 'Liberation Serif', 'DejaVu Serif', Georgia, serif;
+  --header-min: 56px;
+  --sidebar-w: 232px;
+  --sidebar-collapsed: 76px;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --text-sm: 0.8125rem;
+  --text-md: 0.975rem;
+  --ease: 160ms ease;
+  --topbar-h: 64px;
+}
+
+[data-theme='forest-dawn'] {
+  color-scheme: light;
+  --bg: #f4f0e6;
+  --bg-elevated: #fffaf1;
+  --bg-input: #fff;
+  --bg-header: rgba(244, 240, 230, 0.92);
+  --text: #1c211c;
+  --text-muted: #3e463f;
+  --text-faint: #5e675f;
+  --line: rgba(28, 33, 28, 0.14);
+  --accent: #8a5418;
+  --accent-contrast: #fffaf1;
+  --moss: #2f5d45;
+  --moss-deep: #d5e3d4;
+  --caption-bg: rgba(20, 16, 10, 0.82);
+  --caption-text: #f7f3ea;
+  --badge-bg: rgba(20, 16, 10, 0.82);
+  --badge-text: #f7f3ea;
+  --scrim: rgba(28, 33, 28, 0.4);
+  --glow: rgba(47, 93, 69, 0.12);
+  --shadow: 0 16px 40px rgba(40, 32, 16, 0.12);
+  --danger: #8d3d32;
+  --focus: #8a5418;
+  --thumb-shade: #d9d3c6;
+}
